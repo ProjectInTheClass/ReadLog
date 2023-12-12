@@ -1,0 +1,61 @@
+//
+//  SearchBar.swift
+//  ReadLog
+//
+//  Created by 유석원 on 11/20/23.
+//
+
+import SwiftUI
+
+struct SearchBar: View {
+    @Binding var text: String
+    @StateObject var viewModel: PaginationViewModel
+    var isFocused: FocusState<Bool>.Binding
+    
+    var body: some View {
+        HStack {
+            HStack {
+//                Image(systemName: "magnifyingglass")
+                
+                TextField("책 제목, 작가, 출판사", text: $text, onCommit: {
+                    
+                    if !text.isEmpty {
+                        viewModel.clear()
+                        viewModel.setKeyword(keyword: text)
+                        viewModel.searchData()
+                    }
+                    
+                    
+                    // hide keyboard
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                })
+                .frame(height: 25)
+                .body3(.black)
+                .foregroundColor(.primary)
+                .focused(isFocused)
+                
+                if !text.isEmpty {
+                    Button(action: {
+                        self.text = ""
+                    }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.system(size: 25))
+                    }
+                } else {
+                    EmptyView()
+                }
+            }
+            .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
+            .foregroundColor(.secondary)
+            .background(Color(.secondarySystemBackground))
+            .cornerRadius(10.0)
+        }
+        .padding(.horizontal)
+    }
+    
+    
+}
+
+//#Preview {
+//
+//}
