@@ -29,10 +29,9 @@ struct BookWishlistView: View {
                 
                 VStack {
                     header
-                        .offset(y: 0)
                     if dbBookData.isEmpty {
                         Spacer()
-                        Text("아직 찜 목록에 아무 것도 없어요!")
+                        Text("아직 찜 목록에 아무 것도 없어요")
                             .display(.secondary)
                     } else {
                         ScrollView {
