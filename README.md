@@ -5,6 +5,7 @@
 아직도 책 내용을 스마트폰에 정리할 때 손 아프게 직접 입력하시나요?<br/>
 카메라로 책 내용을 찍고, 원하는 영역을 선택하면 바로 기록되는 간편한 기능을 체험해보세요.<br/>
 <책과 나의 조각>에서 '책'에서 얻은 지식과 '나' 개인의 생각을 조화롭게 조각처럼 맞춰보세요.<br/>
+[책과 나의 조각 소개 페이지](https://projectintheclass.github.io/ReadLog/)
 
 ![Group 2](https://github.com/ProjectInTheClass/ReadLog/assets/26588989/ebcd2880-cea0-4693-a084-60b0c11f88ca)
 
